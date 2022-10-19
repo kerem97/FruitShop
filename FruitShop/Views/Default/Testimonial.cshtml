@@ -1,0 +1,51 @@
+﻿@using FruitShop.Models.Classes
+@model List<FruitShop.Models.Testimonial>
+@{
+    ViewBag.Title = "Testimonial";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+
+<section class="client_section layout_padding">
+    <div class="container ">
+        <div class="heading_container">
+            <h2>
+                What Says Customer
+            </h2>
+            <hr>
+        </div>
+        <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
+            @foreach (var x in Model)
+            {
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="client_container layout_padding-top">
+                            <div class="img-box">
+                                <img src="~/web/ninom-html/images/client-img.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    @x.Name
+                                </h5>
+                                <p>
+                                    <img src="~/web/ninom-html/images/left-quote.png" alt="">
+                                    <span>
+                                        @x.Message
+                                    </span>
+                                    <img src="~/web/ninom-html/images/right-quote.png" alt=""> <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
+                    <span class="sr-only"></span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
+                    <span class="sr-only">Next</span>
+                </a>
+            }
+        </div>
+
+    </div>
+
+</section>

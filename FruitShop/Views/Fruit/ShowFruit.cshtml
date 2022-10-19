@@ -1,0 +1,28 @@
+﻿@model FruitShop.Models.Fruit
+@{
+    ViewBag.Title = "ShowFruit";
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+}
+
+<h2>ShowFruit</h2>
+
+<br />
+<form method="post">
+    @Html.Label("Fruit ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Name")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("Image")
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    <br />
+    @Html.Label("Price")
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.Label("Piece")
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Save</button>
+</form>

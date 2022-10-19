@@ -1,0 +1,24 @@
+﻿@model FruitShop.Models.Classes.Admin
+@{
+    ViewBag.Title = "UpdateUser";
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+}
+
+<h2>UpdateUser</h2>
+
+
+<br />
+<form method="post">
+    @Html.Label("Admin ID")
+    @Html.TextBoxFor(x => x.AdminId, new { @class = "form-control" })
+    <br />
+    @Html.Label("Username")
+    @Html.TextBoxFor(x => x.username, new { @class = "form-control" })
+    <br />
+    @Html.Label("Password")
+    @Html.TextBoxFor(x => x.password, new { @class = "form-control" })
+    <br />
+   
+
+    <button class="btn btn-info">Save</button>
+</form>

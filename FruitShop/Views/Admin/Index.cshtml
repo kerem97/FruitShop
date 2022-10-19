@@ -1,0 +1,28 @@
+﻿@using FruitShop.Models.Classes
+@model List<FruitShop.Models.Classes.Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+}
+User List
+<br />
+<br />
+@foreach (var x in Model)
+{
+
+    <table class="table table-hover">
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <td>@x.username</td>
+            <td>@x.password</td>
+            <td><a class="btn btn-info" href="/Admin/UpdateUser/@x.AdminId">Update</a></td>
+            <td><a class="btn btn-danger"href="/Admin/DeleteUser/@x.AdminId">Delete</a></td>
+        </tr>
+    </table>
+
+}

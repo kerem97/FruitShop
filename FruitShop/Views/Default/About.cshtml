@@ -1,0 +1,39 @@
+﻿@using FruitShop.Models.Classes
+@model List<FruitShop.Models.About>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+
+
+<section class="about_section">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var x in Model)
+            {
+                <div class="col-md-6 px-0">
+                    <div class="img-box">
+                        <img src="@x.Image" alt="">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <hr>
+                            <h2>
+                                @x.Title
+                            </h2>
+                        </div>
+                        <p>
+                            @x.SubTitle
+                        </p>
+                        <a href="">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>

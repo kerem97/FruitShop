@@ -1,0 +1,31 @@
+﻿@using FruitShop.Models.Classes
+@model List<FruitShop.Models.Fruit>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+}
+<h2>Fruit List</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>    
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Piece</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>           
+            <td>@x.Image</td>
+            <td>@x.Name</td>       
+            <td>@x.Price</td>       
+            <td>@x.Piece</td>       
+            <td><a class="btn btn-danger" href="/Fruit/DeleteFruit/@x.ID">Delete</a></td>       
+            <td><a class="btn btn-primary" href="/Fruit/ShowFruit/@x.ID">Update</a></td>       
+        </tr>
+    }
+</table>
+<a href="/Fruit/AddFruit" class="btn btn-default">Add New Fruit</a>

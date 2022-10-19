@@ -1,0 +1,28 @@
+﻿
+@model List<FruitShop.Models.Classes.Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_LayOut.cshtml";
+}
+
+<h2>Contact List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Sender Name</th>
+        <th>E-Mail</th>
+        <th>Number</th>
+        <th>Message</th>    
+        <th>Delete</th>    
+    </tr>
+    @foreach (var x in Model)
+    {
+         <tr>
+             <td>@x.Name</td>
+             <td>@x.Mail</td>
+             <td>@x.Number</td>
+             <td>@x.Message</td>
+             <td><a class="btn btn-danger" href="/Contact/DeleteMessage/@x.ID">Delete</a></td>
+         </tr>   
+    }
+</table>
